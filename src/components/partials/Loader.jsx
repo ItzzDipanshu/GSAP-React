@@ -5,13 +5,17 @@ import React, { useRef } from 'react'
 const Loader = () => {
 
     const loader = useRef(null);
+    const tl = gsap.timeline();
 
     useGSAP(()=>{
-        gsap.to(loader.current,{
+        tl.to(loader.current,{
             width: '100%',
-            duration: 2,
+            duration: 1.5,
             delay: 0.8,
             ease: "power4.out"
+        })
+        tl.to(loader.current,{
+          height: 0
         })
     })
 

@@ -2,7 +2,7 @@ import { useGSAP } from '@gsap/react';
 import gsap from 'gsap/all';
 import React, { useRef } from 'react'
 
-const Nav = () => {
+const Nav = ({menu, setMenu}) => {
 
   const nav = useRef(null);
 
@@ -15,11 +15,15 @@ const Nav = () => {
     })
   })
 
+  const menuHandler = ()=>{
+    setMenu(true);
+  }
+
   return (
     <div ref={nav} className='w-full h-[10%]'>
       <div className='flex item-center justify-between '>
       <img src="/logo.svg" alt="" />
-      <h1>Menu</h1>
+      <h1 className='cursor-pointer hover:scale-[1.2] transition-all' onClick={menuHandler} >Menu</h1>
       </div>
     </div>
   )

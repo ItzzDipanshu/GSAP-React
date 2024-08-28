@@ -3,7 +3,7 @@ import { Tilt } from '@jdion/tilt-react'
 
 const Menuleft = () => {
   return (
-    <div className='h-full w-2/3 px-12 py-12 overflow-hidden'>
+    <div className='h-full w-2/3 p-12 overflow-hidden'>
         <Tilt className='h-full w-full relative'>
             <img className='w-full h-full absolute scale-[0.97] opacity-[30%] object-cover' src="/tiltEff.jpg" alt="" />
             <img className='w-full h-full absolute scale-[0.98] opacity-[40%] object-cover' src="/tiltEff.jpg" alt="" />

@@ -6,13 +6,23 @@ const Header = () => {
 
     const header = useRef(null);
 
+
     useGSAP(()=>{
-        gsap.from(header.current,{
+
+    let clutter = "";
+    const splitText = header.current.textContent.split("");
+    splitText.forEach(item=>{
+      clutter += `<span>${item}</span>`
+    })
+    header.current.innerHTML = clutter;
+
+        gsap.from(".headerName span",{
             y: "100%",
             opacity: 0,
+            duration: 0.05,
             rotate: "90deg",
-            duration: 0.2,
             delay: 2,
+            stagger: 0.03,
 
         })
     })
@@ -21,7 +31,7 @@ const Header = () => {
   return (
     <div  className=" w-full flex flex-col items-center justify-center">
       <div className="w-[90%] flex items-center justify-center overflow-hidden">
-        <h1 ref={header} className="text-[20vw] origin-left font-bold tracking-tighter leading-tight">Dipanshu</h1>
+        <h1 ref={header} className="headerName text-[20vw] origin-left font-bold tracking-tighter leading-tight">Dipanshu</h1>
       </div>
       <div className="w-[80%] flex items-center justify-between">
         <div className="flex gap-3 items-center">
